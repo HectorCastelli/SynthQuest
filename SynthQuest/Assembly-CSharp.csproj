@@ -46,10 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AutoDestroyParticle.cs" />
+     <Compile Include="Assets\Scripts\CameraBgChanger.cs" />
      <Compile Include="Assets\Scripts\FloorRandomizer.cs" />
      <Compile Include="Assets\Scripts\FollowObject.cs" />
      <Compile Include="Assets\Scripts\GamePlacer.cs" />
      <Compile Include="Assets\Scripts\GrooveMeter.cs" />
+     <Compile Include="Assets\Scripts\LoseDetector.cs" />
      <Compile Include="Assets\Scripts\MapPoint.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RotateY.cs" />

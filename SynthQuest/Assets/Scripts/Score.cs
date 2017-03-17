@@ -9,6 +9,8 @@ public class Score : MonoBehaviour {
     public Text output;
     public float starVal;
 
+    public GameObject particles;
+
 	// Update is called once per frame
 	void Update () {
         output.text = "SCORE: " + score;
@@ -24,6 +26,7 @@ public class Score : MonoBehaviour {
         if (col.gameObject.name.Contains("Star"))
         {
             AddScore(this.GetComponent<GrooveMeter>().grove);
+            Instantiate(particles, col.transform.position, this.transform.localRotation);
             Destroy(col.gameObject);
         }
     }

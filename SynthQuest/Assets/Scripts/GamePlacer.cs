@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class GamePlacer : MonoBehaviour {
 
+    public GameObject startPart;
+
     public GameObject[] mapParts;
 
-    public float currentHeight = 7.2f;
+    public float currentHeight = 0;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+		currentHeight = CalculateLocalBounds(startPart).size.y-2.4f;
+    }
 	
     public void EnableLoad()
     {
         GameObject level = Instantiate(mapParts[Random.Range(0, mapParts.Length)], this.transform);
         level.GetComponentInChildren<MapPoint>().gplacer = this.GetComponent<GamePlacer>();
         level.transform.position = new Vector3(0, currentHeight, 0);
-        currentHeight += CalculateLocalBounds(level).size.y;
+        currentHeight += CalculateLocalBounds(level).size.y-2.4f;
     }
 
 
