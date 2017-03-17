@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GrooveMeter : MonoBehaviour {
 
-    public float score = 0;
+    public float grove = 0;
     public float sum = 0;
     private int count;
 
@@ -19,8 +19,14 @@ public class GrooveMeter : MonoBehaviour {
 	void Update () {
         count++;
         sum += this.GetComponent<Rigidbody>().velocity.magnitude;
-        score = sum / count;
+        grove = sum / count;
 
-        progress.fillAmount = score / 10f;
+        progress.fillAmount = grove / 10f;
+
+        if (count >= 1000)
+        {
+            sum = sum / count;
+            count = 0;
+        }
 	}
 }

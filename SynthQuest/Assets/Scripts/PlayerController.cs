@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour {
     public float secondjumppower = 60f;
     public float charHeight = 1;
 
-    public GameObject attackThingy;
-
     public bool direction = false; //false = left, true = right
 
     public bool jumped = false;
@@ -46,10 +44,10 @@ public class PlayerController : MonoBehaviour {
         }
         if (direction)
         {
-            this.transform.localEulerAngles = new Vector3(0, 0, 0);
+            this.transform.localEulerAngles = new Vector3(0, 50, 0);
         } else
         {
-            this.transform.localEulerAngles = new Vector3(0, 70, 0);
+            this.transform.localEulerAngles = new Vector3(0, 120, 0);
         }
         //Check for jump
         if (isGrounded() || touching) jumped = false;
@@ -72,14 +70,6 @@ public class PlayerController : MonoBehaviour {
         this.GetComponent<Rigidbody>().velocity = new Vector3 (x, this.GetComponent<Rigidbody>().velocity.y, 0);
         this.GetComponent<Rigidbody>().AddForce(new Vector3(0, y, 0), ForceMode.Impulse);
 
-
-        //Check for attacks
-        if (Input.GetButton("Fire1"))
-        {
-            attackThingy.SetActive(true);
-        }
-        else
-            attackThingy.SetActive(false);
     }
 
     void OnCollisionStay(Collision col)

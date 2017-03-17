@@ -18,6 +18,6 @@ public class FollowObject : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Vector3 tarPos = target.position + distance;
-        this.transform.position = Vector3.Lerp(this.transform.position, tarPos, velocity * Time.deltaTime);
+        this.transform.position = Vector3.Lerp(this.transform.position, tarPos, velocity);
 	}
 }
