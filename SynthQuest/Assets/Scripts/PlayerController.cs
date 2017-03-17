@@ -14,73 +14,81 @@ public class PlayerController : MonoBehaviour {
 
     public bool direction = false; //false = left, true = right
 
-    private bool jumped = false;
+    public bool jumped = false;
+    public bool touching = false;
 
     // Check if is touching the ground
     bool isGrounded()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, charHeight + 0.1f);
+        return Physics.Raycast(transform.position, -Vector3.up, charHeight/2 + 0.1f);
     }
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        charHeight = this.transform.localScale.y;
+}
+
+    // Update is called once per frame
+    void Update()
     {
         float x;
-        //Take inputs for movement
-        if (isGrounded())
-        {
-            jumped = false;
-            x = speed * Input.GetAxis("Horizontal") * Time.deltaTime;
-        }
-        else
-            x = airspeed * Input.GetAxis("Horizontal") * Time.deltaTime;
         float y = 0;
-        //Check for jumps!
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (isGrounded())
-            {
-                y = jumppower;
-            } else if (jumped == false)
-            {
-                jumped = true;
-                y = secondjumppower;
-            }
-        }
-        if (x<0)
-        {
-            direction = false;
-        } else if (x>0)
+
+        //Check for inputs and move
+        x = speed * Input.GetAxis("Horizontal");
+        //Adapt for different directions
+        if (Input.GetAxis("Horizontal") > 0)
         {
             direction = true;
+        } else if (Input.GetAxis("Horizontal") < 0)
+        {
+            direction = false;
         }
         if (direction)
         {
             this.transform.localEulerAngles = new Vector3(0, 0, 0);
-        }
-        else
+        } else
         {
-            this.transform.localEulerAngles = new Vector3(0, 180, 0);
-            x *= -1;
+            this.transform.localEulerAngles = new Vector3(0, 70, 0);
+        }
+        //Check for jump
+        if (isGrounded() || touching) jumped = false;
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (isGrounded() || touching)
+            {
+                //regular jump
+                y = jumppower;
+            }
+            else if (!jumped)
+            {
+                //double jump
+                y = secondjumppower;
+                jumped = true;
+            }
         }
 
+        //Apply movement
+        this.GetComponent<Rigidbody>().velocity = new Vector3 (x, this.GetComponent<Rigidbody>().velocity.y, 0);
+        this.GetComponent<Rigidbody>().AddForce(new Vector3(0, y, 0), ForceMode.Impulse);
 
-
-        this.transform.Translate(x, 0, 0f);
-        this.GetComponent<Rigidbody>().AddForce(0, y, 0, ForceMode.Impulse);
 
         //Check for attacks
         if (Input.GetButton("Fire1"))
         {
             attackThingy.SetActive(true);
-        } else
+        }
+        else
             attackThingy.SetActive(false);
-
     }
 
+    void OnCollisionStay(Collision col)
+    {
+        touching = true;
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        touching = false;
+    }
 }
