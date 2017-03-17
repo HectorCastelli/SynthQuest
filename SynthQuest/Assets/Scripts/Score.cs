@@ -21,7 +21,7 @@ public class Score : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name=="Star")
+        if (col.gameObject.name.Contains("Star"))
         {
             AddScore(this.GetComponent<GrooveMeter>().grove);
             Destroy(col.gameObject);

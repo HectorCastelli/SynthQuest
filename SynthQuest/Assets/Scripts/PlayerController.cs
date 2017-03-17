@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool jumped = false;
     public bool touching = false;
-
+    
     // Check if is touching the ground
     bool isGrounded()
     {
@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour {
         //Apply movement
         this.GetComponent<Rigidbody>().velocity = new Vector3 (x, this.GetComponent<Rigidbody>().velocity.y, 0);
         this.GetComponent<Rigidbody>().AddForce(new Vector3(0, y, 0), ForceMode.Impulse);
-
     }
 
     void OnCollisionStay(Collision col)
