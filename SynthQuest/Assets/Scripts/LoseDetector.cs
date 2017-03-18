@@ -25,12 +25,18 @@ public class LoseDetector : MonoBehaviour {
     public void Lose()
     {
         Debug.Log("You lost");
+        this.GetComponent<GameStates>().LoseGame();
     }
 
-    void OnTriggerEnter(Collider col) {
+    void OnTriggerEnter(Collider col)
+    {
         if (col.gameObject.tag == "Player")
         {
             Lose();
+        }
+        else
+        {
+            Destroy(col.gameObject);
         }
     }
 }

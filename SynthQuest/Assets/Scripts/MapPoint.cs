@@ -9,6 +9,7 @@ public class MapPoint : MonoBehaviour {
     void Start()
     {
         this.GetComponent<MeshRenderer>().enabled = false;
+        gplacer = GameObject.Find("GamePlacer").GetComponent<GamePlacer>();
     }
 
 	void OnTriggerEnter(Collider col) {
