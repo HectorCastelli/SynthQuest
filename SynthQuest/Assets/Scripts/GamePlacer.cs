@@ -20,7 +20,7 @@ public class GamePlacer : MonoBehaviour {
         GameObject level = Instantiate(mapParts[Random.Range(0, mapParts.Length)], this.transform);
         level.GetComponentInChildren<MapPoint>().gplacer = this.GetComponent<GamePlacer>();
         level.transform.position = new Vector3(0, currentHeight, 0);
-        currentHeight += CalculateLocalBounds(level).size.y-2.4f;
+        currentHeight += CalculateLocalBounds(level).size.y-1.2f;
     }
 
 

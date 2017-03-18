@@ -9,6 +9,8 @@ public class Score : MonoBehaviour {
     public Text output;
     public float starVal;
 
+    public AudioSource starSound;
+
     public GameObject particles;
 
 	// Update is called once per frame
@@ -27,6 +29,7 @@ public class Score : MonoBehaviour {
         {
             AddScore(this.GetComponent<GrooveMeter>().grove);
             Instantiate(particles, col.transform.position, this.transform.localRotation);
+            starSound.Play();
             Destroy(col.gameObject);
         }
     }
