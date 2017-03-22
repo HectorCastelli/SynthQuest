@@ -1,0 +1,46 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: ASUS R9 280 Series (ID=0x679a)
+    Vendor:   ATI
+    VRAM:     3053 MB
+    Driver:   21.19.519.2
+Begin MonoManager ReloadAssembly
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.115 seconds
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: M:\LinuxGameJam\Unity\SynthQuest\Build\Windows64\SynthQuest_64_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 2560x1080 60Hz; virtual: 3640x1920 at -1080,-497
+<RI> Initialized touch support.
+UnloadTime: 1.077183 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.480901 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 11792.
+Total: 1.626140 ms (FindLiveObjects: 0.338929 ms CreateObjectMapping: 0.277333 ms MarkObjects: 0.990046 ms  DeleteObjects: 0.019230 ms)
+
+You lost
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.587380 ms
+
+Unloading 9956 unused Assets to reduce memory usage. Loaded Objects now: 331.
+Total: 2.349370 ms (FindLiveObjects: 0.329915 ms CreateObjectMapping: 0.365370 ms MarkObjects: 0.217539 ms  DeleteObjects: 1.435943 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2788 -> priority: 1 
+  Thread -> id: 4c7c -> priority: 1 

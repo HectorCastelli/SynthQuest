@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class AutoDestroyParticle : MonoBehaviour {
 	void Start () {
-        Destroy(this.gameObject, this.GetComponent<ParticleSystem>().duration);
+        Destroy(this.gameObject, this.GetComponent<ParticleSystem>().main.duration);
 	}
 }
